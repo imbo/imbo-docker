@@ -1,0 +1,7 @@
+{
+  "name": "sgulseth/imbo",
+  "require": {
+    "imbo/imbo": "dev-master",
+    "doctrine/dbal": "2.*"
+  }
+}
