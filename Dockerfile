@@ -8,13 +8,19 @@ RUN apt-get update && \
         curl \
         apache2 \
         libapache2-mod-php5 \
+        libpcre3-dev \
+        pkg-config \
         php5-mysql \
         php5-imagick \
         php5-gd \
         php5-curl \
         php-pear \
         php-apc \
+        php5-dev \
 	git && \
+	pecl install mongodb && \
+	echo "extension=mongodb.so" > /etc/php5/mods-available/mongodb.ini && \
+	php5enmod -s ALL mongodb && \
     rm -rf /var/lib/apt/lists/*
 
 # install composer
